@@ -8,7 +8,7 @@ BuildParameters.SetParameters(
     sourceDirectoryPath: "./src",
     title: "TfsUrlParser",
     repositoryOwner: "bbtsoftwareag",
-    repositoryName: "tfs-url-parser",
+    repositoryName: "TfsUrlParser",
     appVeyorAccountName: "bbtsoftwareag");
 
 BuildParameters.PrintParameters(Context);
