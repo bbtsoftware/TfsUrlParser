@@ -9,7 +9,8 @@ BuildParameters.SetParameters(
     title: "TfsUrlParser",
     repositoryOwner: "bbtsoftwareag",
     repositoryName: "TfsUrlParser",
-    appVeyorAccountName: "bbtsoftwareag");
+    appVeyorAccountName: "bbtsoftwareag",
+    shouldPublishMyGet: false);
 
 BuildParameters.PrintParameters(Context);
 
