@@ -16,8 +16,8 @@
     <tags>TeamFoundationServer TFS Git Parser</tags>
   </metadata>
   <files>
-    <file src="TfsUrlParser.dll" target="lib\net45" />
-    <file src="TfsUrlParser.pdb" target="lib\net45" />
-    <file src="TfsUrlParser.xml" target="lib\net45" />
+    <file src="TfsUrlParser.dll" target="lib\net40" />
+    <file src="TfsUrlParser.pdb" target="lib\net40" />
+    <file src="TfsUrlParser.xml" target="lib\net40" />
   </files>
 </package>
