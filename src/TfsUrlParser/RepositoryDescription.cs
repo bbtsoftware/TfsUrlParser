@@ -54,7 +54,7 @@
         public string CollectionName { get; }
 
         /// <summary>
-        /// Gets the URL of the Team Foundation Server collection.
+        /// Gets the URL for accessing the web portal of the Team Foundation Server collection.
         /// </summary>
         public Uri CollectionUrl { get; private set; }
 
