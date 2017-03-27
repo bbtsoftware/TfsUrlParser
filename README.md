@@ -19,7 +19,7 @@ This NuGet package contains code for parsing Team Foundation Server URLs.
 
 ## Code Coverage
 
-[![Coverage Status](https://coveralls.io/repos/github/bbtsoftwareag/TfsUrlParser/badge.svg?branch=develop)](https://coveralls.io/github/bbtsoftwareag/TfsUrlParser?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/BBTSoftwareAG/tfs-url-parser/badge.svg?branch=develop)](https://coveralls.io/github/BBTSoftwareAG/tfs-url-parser?branch=develop)
 
 ## Build
 
