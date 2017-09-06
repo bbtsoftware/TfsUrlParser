@@ -38,6 +38,7 @@
 
             var splitLastPart = splitPath[1].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
+            this.ServerUrl = new Uri(repoUrl.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped));
             this.CollectionName = splitFirstPart.Reverse().Skip(1).Take(1).Single();
             this.CollectionUrl =
                 new Uri(
@@ -47,6 +48,11 @@
             this.ProjectName = splitFirstPart.Last();
             this.RepositoryName = splitLastPart.First();
         }
+
+        /// <summary>
+        /// Gets the Url of the Team Foundation Server.
+        /// </summary>
+        public Uri ServerUrl { get; }
 
         /// <summary>
         /// Gets the name of the Team Foundation Server collection.
