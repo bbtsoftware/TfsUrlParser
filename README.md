@@ -2,13 +2,13 @@
 
 This NuGet package contains code for parsing Team Foundation Server URLs.
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/bbtsoftwareag/TfsUrlParser/blob/feature/build/LICENSE)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/bbtsoftware/TfsUrlParser/blob/master/LICENSE)
 
 ## Information
 
 | | Stable | Pre-release |
 |:--:|:--:|:--:|
-|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/bbtsoftwareag/TfsUrlParser.svg)](https://github.com/bbtsoftwareag/TfsUrlParser/releases/latest)|
+|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/bbtsoftware/TfsUrlParser.svg)](https://github.com/bbtsoftware/TfsUrlParser/releases/latest)|
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/TfsUrlParser.svg)](https://www.nuget.org/packages/TfsUrlParser)|[![NuGet](https://img.shields.io/nuget/vpre/TfsUrlParser.svg)](https://www.nuget.org/packages/TfsUrlParser)|
 
 ## Build Status
