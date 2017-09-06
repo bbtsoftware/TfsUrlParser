@@ -15,7 +15,7 @@ This NuGet package contains code for parsing Team Foundation Server URLs.
 
 |Develop|Master|
 |:--:|:--:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/develop?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser)|
+|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/develop?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/master?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/master)|
 
 ## Code Coverage
 
