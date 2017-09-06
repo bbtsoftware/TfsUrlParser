@@ -8,12 +8,13 @@
     <owners>bbtsoftware, pascalberger</owners>
     <summary>Provides a parser for Team Foundation Server (TFS) URLs.</summary>
     <description>Provides a parser to get repository information from a Team Foundation Server (TFS) URLs.</description>
-    <licenseUrl>https://github.com/bbtsoftwareag/TfsUrlParser/blob/develop/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/bbtsoftwareag/TfsUrlParser/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/bbtsoftwareag/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
+    <licenseUrl>https://github.com/bbtsoftware/TfsUrlParser/blob/develop/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/bbtsoftware/TfsUrlParser/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright © 2017 BBT Software AG, Root/Zermatt, Switzerland</copyright>
     <tags>TeamFoundationServer TFS Git Parser</tags>
+    <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.1.0</releaseNotes>
   </metadata>
   <files>
     <file src="TfsUrlParser.dll" target="lib\net40" />
