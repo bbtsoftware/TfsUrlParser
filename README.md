@@ -2,7 +2,7 @@
 
 This NuGet package contains code for parsing Team Foundation Server URLs.
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/bbtsoftwareag/TfsUrlParser/blob/feature/build/LICENSE)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/bbtsoftware/TfsUrlParser/blob/master/LICENSE)
 
 ## Information
 
