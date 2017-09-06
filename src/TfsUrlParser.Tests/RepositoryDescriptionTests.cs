@@ -31,106 +31,123 @@
         [Theory]
         [InlineData(
             @"http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository",
+            @"http://myserver:8080/",
             "defaultcollection",
             @"http://myserver:8080/tfs/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"http://tfs.myserver/defaultcollection/myproject/_git/myrepository",
+            @"http://tfs.myserver/",
             "defaultcollection",
             @"http://tfs.myserver/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"http://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository",
+            @"http://mytenant.visualstudio.com/",
             "defaultcollection",
             @"http://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"http://tfs.foo.com/foo/foo/_git/foo",
+            @"http://tfs.foo.com/",
             "foo",
             @"http://tfs.foo.com/foo",
             "foo",
             "foo")]
         [InlineData(
             @"http://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository/somethingelse",
+            @"http://mytenant.visualstudio.com/",
             "defaultcollection",
             @"http://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"https://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository",
+            @"https://myserver:8080/",
             "defaultcollection",
             @"https://myserver:8080/tfs/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"https://tfs.myserver/defaultcollection/myproject/_git/myrepository",
+            @"https://tfs.myserver/",
             "defaultcollection",
             @"https://tfs.myserver/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"https://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository",
+            @"https://mytenant.visualstudio.com/",
             "defaultcollection",
             @"https://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"https://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository/somethingelse",
+            @"https://mytenant.visualstudio.com/",
             "defaultcollection",
             @"https://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"https://tfs.foo.com/foo/foo/_git/foo",
+            @"https://tfs.foo.com/",
             "foo",
             @"https://tfs.foo.com/foo",
             "foo",
             "foo")]
         [InlineData(
             @"ssh://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository",
+            @"ssh://myserver:8080/",
             "defaultcollection",
             @"https://myserver:8080/tfs/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"ssh://tfs.myserver/defaultcollection/myproject/_git/myrepository",
+            @"ssh://tfs.myserver/",
             "defaultcollection",
             @"https://tfs.myserver/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"ssh://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository",
+            @"ssh://mytenant.visualstudio.com/",
             "defaultcollection",
             @"https://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"ssh://mytenant.visualstudio.com/defaultcollection/myproject/_git/myrepository/somethingelse",
+            @"ssh://mytenant.visualstudio.com/",
             "defaultcollection",
             @"https://mytenant.visualstudio.com/defaultcollection",
             "myproject",
             "myrepository")]
         [InlineData(
             @"ssh://tfs.foo.com/foo/foo/_git/foo",
+            @"ssh://tfs.foo.com/",
             "foo",
             @"https://tfs.foo.com/foo",
             "foo",
             "foo")]
         [InlineData(
             @"ssh://foo:bar@myserver:8080/tfs/defaultcollection/myproject/_git/myrepository",
+            @"ssh://myserver:8080/",
             "defaultcollection",
             @"https://myserver:8080/tfs/defaultcollection",
             "myproject",
             "myrepository")]
-        public void Should_Parse_Repo_Url(string repoUrl, string collectionName, string collectionurl, string projectName, string repositoryName)
+        public void Should_Parse_Repo_Url(string repoUrl, string serverUrl, string collectionName, string collectionurl, string projectName, string repositoryName)
         {
             // Given / When
             var repositoryDescription = new RepositoryDescription(new Uri(repoUrl));
 
             // Then
+            repositoryDescription.ServerUrl.ToString().ShouldBe(serverUrl);
             repositoryDescription.CollectionName.ShouldBe(collectionName);
             repositoryDescription.CollectionUrl.ShouldBe(new Uri(collectionurl));
             repositoryDescription.ProjectName.ShouldBe(projectName);
