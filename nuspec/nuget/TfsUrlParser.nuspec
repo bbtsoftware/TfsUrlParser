@@ -14,7 +14,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright © 2017 BBT Software AG, Root/Zermatt, Switzerland</copyright>
     <tags>TeamFoundationServer TFS Git Parser</tags>
-    <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.1.0</releaseNotes>
+    <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.2.0</releaseNotes>
   </metadata>
   <files>
     <file src="TfsUrlParser.dll" target="lib\net40" />

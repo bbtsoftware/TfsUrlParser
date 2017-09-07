@@ -22,7 +22,9 @@
                 throw new ArgumentNullException(nameof(repoUrl));
             }
 
-            var repoUrlString = ConvertToSupportedUriScheme(repoUrl).ToString();
+            this.RepositoryUrl = ConvertToSupportedUriScheme(repoUrl);
+            var repoUrlString = this.RepositoryUrl.ToString();
+
             var gitSeparator = new[] { "/_git/" };
             var splitPath = repoUrl.AbsolutePath.Split(gitSeparator, StringSplitOptions.None);
             if (splitPath.Length < 2)
@@ -73,6 +75,12 @@
         /// Gets the name of the Git repository.
         /// </summary>
         public string RepositoryName { get; private set; }
+
+        /// <summary>
+        /// Gets the URL of the Git repository.
+        /// URLs using SSH scheme are converted to HTTPS.
+        /// </summary>
+        public Uri RepositoryUrl { get; private set; }
 
         /// <summary>
         /// Converts the repository URL to a supported scheme if possible.
