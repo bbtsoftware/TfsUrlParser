@@ -12,5 +12,5 @@ To use the Team Foundation Server (TFS) URL parser you need to add the [TfsUrlPa
     Console.WriteLine(repositoryDescription.CollectionName);
     Console.WriteLine(repositoryDescription.ProjectName);
     Console.WriteLine(repositoryDescription.RepositoryUrl);
-    Console.WriteLine(this.HttpRepositoryRemoteUrl));
+    Console.WriteLine(repositoryDescription.RepositoryName);
 ```
