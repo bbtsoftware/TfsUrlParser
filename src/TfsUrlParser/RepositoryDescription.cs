@@ -1,6 +1,7 @@
 ﻿namespace TfsUrlParser
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
@@ -32,21 +33,32 @@
                 throw new UriFormatException("No valid Git repository URL.");
             }
 
+            this.ServerUrl = new Uri(repoUrl.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped));
+
             var splitFirstPart = splitPath[0].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-            if (splitFirstPart.Length < 2)
+
+            // visualstudio.com URLs don't contain the collection in the path
+            if (splitFirstPart.Length == 1 && this.ServerUrl.Host.EndsWith("visualstudio.com"))
+            {
+                this.CollectionName = "DefaultCollection";
+                this.CollectionUrl = this.ServerUrl;
+            }
+            else if (splitFirstPart.Length >= 2)
+            {
+                this.CollectionName = splitFirstPart.Reverse().Skip(1).Take(1).Single();
+                this.CollectionUrl =
+                    new Uri(
+                        repoUrlString.Substring(
+                            0,
+                            repoUrlString.IndexOf("/" + this.CollectionName + "/", StringComparison.OrdinalIgnoreCase) + this.CollectionName.Length + 1));
+            }
+            else
             {
                 throw new UriFormatException("No valid Git repository URL containing default collection and project name.");
             }
 
             var splitLastPart = splitPath[1].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
-            this.ServerUrl = new Uri(repoUrl.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped));
-            this.CollectionName = splitFirstPart.Reverse().Skip(1).Take(1).Single();
-            this.CollectionUrl =
-                new Uri(
-                    repoUrlString.Substring(
-                        0,
-                        repoUrlString.IndexOf("/" + this.CollectionName + "/", StringComparison.OrdinalIgnoreCase) + this.CollectionName.Length + 1));
             this.ProjectName = splitFirstPart.Last();
             this.RepositoryName = splitLastPart.First();
         }

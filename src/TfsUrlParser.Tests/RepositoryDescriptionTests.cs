@@ -157,6 +157,22 @@
             "myproject",
             "myrepository",
             @"https://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository")]
+        [InlineData(
+            @"https://myorganization@dev.azure.com/myorganization/myproject/_git/myrepository",
+            @"https://myorganization@dev.azure.com/",
+            "myorganization",
+            @"https://myorganization@dev.azure.com/myorganization",
+            "myproject",
+            "myrepository",
+            @"https://myorganization@dev.azure.com/myorganization/myproject/_git/myrepository")]
+        [InlineData(
+            @"https://myorganization.visualstudio.com/myproject/_git/myrepository",
+            @"https://myorganization.visualstudio.com/",
+            "DefaultCollection",
+            @"https://myorganization.visualstudio.com",
+            "myproject",
+            "myrepository",
+            @"https://myorganization.visualstudio.com/myproject/_git/myrepository")]
         public void Should_Parse_Repo_Url(
             string repoUrl,
             string serverUrl,
