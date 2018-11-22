@@ -2,18 +2,19 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>TfsUrlParser</id>
-    <title>Team Foundation Server (TFS) URL Parser</title>
+    <title>Azure DevOps URL Parser</title>
     <version>0.0.0</version>
     <authors>BBT Software AG</authors>
     <owners>bbtsoftware, pascalberger</owners>
-    <summary>Provides a parser for Team Foundation Server (TFS) URLs.</summary>
-    <description>Provides a parser to get repository information from a Team Foundation Server (TFS) URLs.</description>
+    <summary>Provides a parser for Azure DevOps and Azure DevOps Server URLs.</summary>
+    <description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</description>
     <licenseUrl>https://github.com/bbtsoftware/TfsUrlParser/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://github.com/bbtsoftware/TfsUrlParser/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © 2017 BBT Software AG, Root/Zermatt, Switzerland</copyright>
-    <tags>TeamFoundationServer TFS Git Parser</tags>
+    <repository type="git" url="https://github.com/cake-contrib/Cake.Issues"/>
+    <copyright>Copyright © BBT Software AG</copyright>
+    <tags>AzureDevOps Git Parser</tags>
     <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.2.1</releaseNotes>
   </metadata>
   <files>

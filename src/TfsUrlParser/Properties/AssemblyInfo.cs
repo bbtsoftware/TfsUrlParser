@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TfsUrlParser")]
-[assembly: AssemblyDescription("Team Foundation Server (TFS) URL Parser")]
+[assembly: AssemblyDescription("Azure DevOps URL Parser URL Parser")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BBT Software AG")]
 [assembly: AssemblyProduct("TfsUrlParser")]
-[assembly: AssemblyCopyright("Copyright © 2017 BBT Software AG, Root/Zermatt, Switzerland")]
+[assembly: AssemblyCopyright("Copyright © BBT Software AG")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
