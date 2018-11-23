@@ -18,8 +18,8 @@
     <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.2.1</releaseNotes>
   </metadata>
   <files>
-    <file src="TfsUrlParser.dll" target="lib\net40" />
-    <file src="TfsUrlParser.pdb" target="lib\net40" />
-    <file src="TfsUrlParser.xml" target="lib\net40" />
+    <file src="netstandard2.0\TfsUrlParser.dll" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\TfsUrlParser.pdb" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\TfsUrlParser.xml" target="lib\netstandard2.0" />
   </files>
 </package>
