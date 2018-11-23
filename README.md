@@ -1,6 +1,6 @@
-# Team Foundation Server (TFS) URL parser
+# Azure DevOps URL parser
 
-This NuGet package contains code for parsing Team Foundation Server URLs.
+This NuGet package contains code for parsing Azure DevOps and Azure DevOps Server URLs.
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/bbtsoftware/TfsUrlParser/blob/master/LICENSE)
 
