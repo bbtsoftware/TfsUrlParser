@@ -8,7 +8,7 @@
     <owners>bbtsoftware, pascalberger</owners>
     <summary>Provides a parser for Azure DevOps and Azure DevOps Server URLs.</summary>
     <description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</description>
-    <licenseUrl>https://github.com/bbtsoftware/TfsUrlParser/blob/develop/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/bbtsoftware/TfsUrlParser/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
