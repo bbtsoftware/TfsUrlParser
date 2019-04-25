@@ -11,7 +11,6 @@ BuildParameters.SetParameters(
     repositoryName: "TfsUrlParser",
     appVeyorAccountName: "BBTSoftwareAG",
     shouldPublishMyGet: false,
-    shouldRunCodecov: false,
     shouldDeployGraphDocumentation: false);
 
 BuildParameters.PrintParameters(Context);
