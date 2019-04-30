@@ -113,7 +113,7 @@
                 {
                     Scheme = Uri.UriSchemeHttps,
                     UserName = string.Empty,
-                    Password = string.Empty
+                    Password = string.Empty,
                 };
                 return uriBuilder.Uri;
             }
