@@ -19,7 +19,7 @@ BuildParameters.PrintParameters(Context);
 ToolSettings.SetToolSettings(
     context: Context,
     dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/TfsUrlParser.Tests/*.cs" },
-    testCoverageFilter: "+[*]* -[xunit.*]* -[*.Tests]* -[Shouldly]* -[DiffEngine]*",
+    testCoverageFilter: "+[*]* -[xunit.*]* -[*.Tests]* -[Shouldly]* -[DiffEngine]* -[EmptyFiles]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
