@@ -10,8 +10,7 @@ BuildParameters.SetParameters(
     repositoryOwner: "bbtsoftware",
     repositoryName: "TfsUrlParser",
     appVeyorAccountName: "BBTSoftwareAG",
-    shouldRunCodecov: true,
-    shouldGenerateDocumentation: false);
+    shouldRunCodecov: true);
 
 BuildParameters.PrintParameters(Context);
 
