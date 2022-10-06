@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=3.0.0
+#load nuget:?package=Cake.Recipe&version=3.0.1
 
 Environment.SetVariableNames();
 
@@ -16,7 +16,6 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(
     context: Context,
-    //dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/TfsUrlParser.Tests/*.cs" },
     testCoverageFilter: "+[*]* -[xunit.*]* -[*.Tests]* -[Shouldly]* -[DiffEngine]* -[EmptyFiles]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
