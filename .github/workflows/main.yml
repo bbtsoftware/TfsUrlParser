@@ -1,31 +1,57 @@
-# This is a basic workflow to help you get started with Actions
+name: Build
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "develop" branch
   push:
-    branches: [ "develop", "develop", "/release/.*/", "/hotfix/.*/" ]
+    branches:
+      - master
+      - develop
+      - "feature/**"
+      - "release/**"
+      - "hotfix/**"
+    tags:
+      - "*"
   pull_request:
-    branches: [ "develop", "develop", "/release/.*/", "/hotfix/.*/" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout the repository 
+        uses: actions/checkout@v2.3.4
+      
+      - name: Fetch all tags and branches
+        run: git fetch --prune --unshallow
 
-      # Run Build
-      - name: Run Build
-        run: |
-          ./build.ps1
+      - name: Cache Tools
+        uses: actions/cache@v2.1.6
+        with:
+          path: tools
+          key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
+      
+      - name: Build project
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: recipe.cake
+          target: CI
+          verbosity: Normal
+          cake-version: 1.3.0
+          cake-bootstrap: true
+
+      - name: Upload Issues-Report
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          if-no-files-found: warn
+          name: ${{ matrix.os }} issues
+          path: BuildArtifacts/report.html
+
+      - name: Upload Packages
+        uses: actions/upload-artifact@v2.2.3
+        if: runner.os == 'Windows'
+        with:
+          if-no-files-found: warn
+          name: package
+          path: BuildArtifacts/Packages/**/*
