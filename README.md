@@ -15,7 +15,7 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 |Develop|Master|
 |:--:|:--:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/develop?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/master?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/master)|
+|[![Build status](https://github.com/bbtbir/tfsurlparser/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/bbtbir/TfsUrlParser/actions/workflows/main.yml?query=branch%3Adevelop)|[![Build status](https://github.com/bbtbir/tfsurlparser/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/bbtbir/TfsUrlParser/actions/workflows/main.yml?query=branch%3Amaster)|
 
 ## Code Coverage
 
