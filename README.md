@@ -21,7 +21,7 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 [![Coverage Status](https://coveralls.io/repos/github/BBTSoftwareAG/tfs-url-parser/badge.svg?branch=develop)](https://coveralls.io/github/BBTSoftwareAG/tfs-url-parser?branch=develop)
 
-## Repository Description
+## RepositoryDescription
 
 To use the Azure DevOps URL parser you need to add the [TfsUrlParser NuGet package](https://www.nuget.org/packages/TfsUrlParser/).
 
