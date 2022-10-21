@@ -1,0 +1,40 @@
+# This workflow will build a .NET project
+
+name: .NET
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - "feature/**"
+      - "release/**"
+      - "hotfix/**"
+    tags:
+      - "*"
+  pull_request:
+
+defaults:
+  run:
+    working-directory: src
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
