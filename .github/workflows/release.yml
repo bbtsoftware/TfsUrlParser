@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  create:
+    branches: 
+      - release/**
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+    
+defaults:
+  run:
+    working-directory: src
+    
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    env:
+      $buildConfig: 'Release'
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Get Build Version
+      run: |
+           C:/projects/tfsurlparser/tools/GitVersion.CommandLine.3.6.5/tools/GitVersion.exe" -output buildserver -updateassemblyinfo "SolutionInfo.cs"
+      shell: pwsh
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore dependencies
+      run: nuget restore
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+          dotnet-version: 6.0.x
+
+    - name: Build
+      run: dotnet build --configuration $env:buildConfig -p:Version=$BUILD_VERSION --no-restore
+
+    - name: Run tests
+      run: dotnet test /p:Configuration=$env:buildConfig --no-restore --no-build --verbosity normal
+      
+    - name: Publish
+      if: startsWith(github.ref, 'refs/heads/release')
+      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETORGAPI}}
