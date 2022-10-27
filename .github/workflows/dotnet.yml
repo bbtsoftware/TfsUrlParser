@@ -1,18 +1,15 @@
-# This workflow will build a .NET project
+# This workflow will build TfsUrlParser project
 
 name: CI
 
 on:
   push:
     branches:
-      - master
+      - main
       - develop
       - "feature/**"
       - "release/**"
       - "hotfix/**"
-    tags:
-      - "*"
-  pull_request:
 
 defaults:
   run:
@@ -26,7 +23,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -58,12 +55,6 @@ jobs:
         with:
           token: ${{ secrets.CODECOVACCESSTOKEN }} # not required for public repos
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1
-
-      - name: Publish NuGet
-        if: startsWith(github.ref, 'refs/heads/Release')
-        run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETORGAPI}}
 
       # - name: Code Coverage Report
       #   uses: irongut/CodeCoverageSummary@v1.3.0
