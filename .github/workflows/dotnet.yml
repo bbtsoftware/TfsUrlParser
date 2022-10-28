@@ -18,7 +18,7 @@ defaults:
 jobs:
   build:
     env:
-      BUILD_CONFIG: "Release"
+      BUILD_CONFIG: "Debug"
 
     runs-on: ${{ matrix.os }}
     strategy:
@@ -48,30 +48,9 @@ jobs:
         run: dotnet build --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
 
       - name: Test
-        run: dotnet test -p:Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal --collect:"XPlat Code Coverage"
+        run: dotnet test -p:Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
 
       - name: Codecov
-        uses: codecov/codecov-action@v1.5.2
+        uses: codecov/codecov-action@v3
         with:
-          token: ${{ secrets.CODECOVACCESSTOKEN }} # not required for public repos
-
-
-      # - name: Code Coverage Report
-      #   uses: irongut/CodeCoverageSummary@v1.3.0
-      #   with:
-      #     filename: coverage/**/coverage.cobertura.xml
-      #     badge: true
-      #     fail_below_min: true
-      #     format: markdown
-      #     hide_branch_rate: false
-      #     hide_complexity: true
-      #     indicators: true
-      #     output: both
-      #     thresholds: "60 80"
-
-      # - name: Add Coverage PR Comment
-      #   uses: marocchino/sticky-pull-request-comment@v2
-      #   if: github.event_name == 'pull_request'
-      #   with:
-      #     recreate: true
-      #     path: code-coverage-results.md
+          token: ${{ secrets.CODECOVACCESSTOKEN }}
