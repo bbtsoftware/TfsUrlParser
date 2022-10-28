@@ -15,13 +15,13 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 |Develop|Master|
 |:--:|:--:|
-|[![Build status](https://github.com/bbtbir/tfsurlparser/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/bbtbir/TfsUrlParser/actions/workflows/main.yml?query=branch%3Adevelop)|[![Build status](https://github.com/bbtbir/tfsurlparser/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/bbtbir/TfsUrlParser/actions/workflows/main.yml?query=branch%3Amaster)|
+|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/dotnet.yml/badge.svg?branch=develop)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/main.yml?query=branch%3Adevelop)|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/develop.yml/badge.svg?branch=master)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/dotnet.yml?query=branch%3Amaster)|
 
 ## Code Coverage
 
-[![Coverage Status](https://coveralls.io/repos/github/BBTSoftwareAG/tfs-url-parser/badge.svg?branch=develop)](https://coveralls.io/github/BBTSoftwareAG/tfs-url-parser?branch=develop)
+[![Coverage Status](https://codecov.io/gh/bbtsoftware/TfsUrlParser/branch/develop/graph/badge.svg?token=0VLbB8a8EF)](https://codecov.io/gh/bbtsoftware/TfsUrlParser)
 
-## RepositoryDescription
+## Class RepositoryDescription
 
 To use the Azure DevOps URL parser you need to add the [TfsUrlParser NuGet package](https://www.nuget.org/packages/TfsUrlParser/).
 
