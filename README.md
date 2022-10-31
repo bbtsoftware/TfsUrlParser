@@ -27,17 +27,4 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 ## Build
 
-To build this package we are using Cake.
-
-On Windows PowerShell run:
-
-```powershell
-./build
-```
-
-On OSX/Linux run:
-
-```bash
-./build.sh
-```
-
+`dotnet build .\src\TfsUrlParser.sln`

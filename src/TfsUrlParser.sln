@@ -8,11 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsUrlParser.Tests", "TfsUrlParser.Tests\TfsUrlParser.Tests.csproj", "{6D16103D-8D2A-4E00-862A-2AD3C00E2883}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{CF561A03-1A80-42E3-BA70-B928138A6C2B}"
-	ProjectSection(SolutionItems) = preProject
-		..\build.ps1 = ..\build.ps1
-		..\build.sh = ..\build.sh
-		..\setup.cake = ..\setup.cake
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{FA42AED9-1A9A-4030-87D6-C89FECA5533C}"
 	ProjectSection(SolutionItems) = preProject
