@@ -1,4 +1,4 @@
-// https://github.com/MADE-Apps/MADE.NET/blob/main/build/GetBuildVersion.psm1
+# https://github.com/MADE-Apps/MADE.NET/blob/main/build/GetBuildVersion.psm1
 
 Function GetBuildVersion {
     Param (
