@@ -15,7 +15,7 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 |Develop|Master|
 |:--:|:--:|
-|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/dotnet.yml/badge.svg?branch=develop)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/main.yml?query=branch%3Adevelop)|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/develop.yml/badge.svg?branch=master)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/dotnet.yml?query=branch%3Amaster)|
+|[![Build status](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/dotnet.yml/badge.svg?branch=develop)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/dotnet.yml)|[![Build status](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/release.yml)|
 
 ## Code Coverage
 
