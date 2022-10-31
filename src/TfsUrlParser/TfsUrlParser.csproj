@@ -13,8 +13,9 @@
     <DocumentationFile>bin\$(Configuration)\TfsUrlParser.XML</DocumentationFile>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-    
+
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
@@ -28,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
   </PropertyGroup>

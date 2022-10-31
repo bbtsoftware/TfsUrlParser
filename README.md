@@ -15,15 +15,28 @@ This NuGet package contains code for parsing Azure DevOps and Azure DevOps Serve
 
 |Develop|Master|
 |:--:|:--:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/develop?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/i4evodvrv7qc9e6y/branch/master?svg=true)](https://ci.appveyor.com/project/BBTSoftwareAG/tfsurlparser/branch/master)|
+|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/dotnet.yml/badge.svg?branch=develop)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/main.yml?query=branch%3Adevelop)|[![Build status](https://github.com/bbtsoftware/tfsurlparser/actions/workflows/develop.yml/badge.svg?branch=master)](https://github.com/bbtsoftware/TfsUrlParser/actions/workflows/dotnet.yml?query=branch%3Amaster)|
 
 ## Code Coverage
 
-[![Coverage Status](https://coveralls.io/repos/github/BBTSoftwareAG/tfs-url-parser/badge.svg?branch=develop)](https://coveralls.io/github/BBTSoftwareAG/tfs-url-parser?branch=develop)
+[![Coverage Status](https://codecov.io/gh/bbtsoftware/TfsUrlParser/branch/develop/graph/badge.svg?token=0VLbB8a8EF)](https://codecov.io/gh/bbtsoftware/TfsUrlParser)
 
-## Quick Links
+## Class RepositoryDescription
 
-* [Documentation](https://bbtsoftware.github.io/TfsUrlParser/)
+To use the Azure DevOps URL parser you need to add the [TfsUrlParser NuGet package](https://www.nuget.org/packages/TfsUrlParser/).
+
+```csharp
+    var repositoryDescription =
+        new RepositoryDescription(
+            "http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository");
+
+    Console.WriteLine(repositoryDescription.ServerUrl);
+    Console.WriteLine(repositoryDescription.CollectionUrl);
+    Console.WriteLine(repositoryDescription.CollectionName);
+    Console.WriteLine(repositoryDescription.ProjectName);
+    Console.WriteLine(repositoryDescription.RepositoryUrl);
+    Console.WriteLine(repositoryDescription.RepositoryName);
+```
 
 ## Build
 
