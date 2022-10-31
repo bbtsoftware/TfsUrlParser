@@ -47,11 +47,9 @@ jobs:
 
       - name: Codecov
         uses: codecov/codecov-action@v1.5.2
-        with:
-          token: ${{ secrets.CODECOVACCESSTOKEN }} # not required for public repos
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1
 
       - name: Publish NuGet
-        run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETORGAPI}}
+        run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETORG}}
