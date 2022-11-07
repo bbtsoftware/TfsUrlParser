@@ -38,7 +38,7 @@
             var splitFirstPart = splitPath[0].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
             // visualstudio.com URLs don't contain the collection in the path
-            if (splitFirstPart.Length == 1 && this.ServerUrl.Host.EndsWith("visualstudio.com"))
+            if (splitFirstPart.Length == 1 && this.ServerUrl.Host.EndsWith("visualstudio.com", StringComparison.OrdinalIgnoreCase))
             {
                 this.CollectionName = "DefaultCollection";
                 this.CollectionUrl = this.ServerUrl;
@@ -113,7 +113,7 @@
                 {
                     Scheme = Uri.UriSchemeHttps,
                     UserName = string.Empty,
-                    Password = string.Empty
+                    Password = string.Empty,
                 };
                 return uriBuilder.Uri;
             }

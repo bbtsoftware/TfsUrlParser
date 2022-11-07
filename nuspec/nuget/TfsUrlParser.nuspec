@@ -8,11 +8,11 @@
     <owners>bbtsoftware, pascalberger</owners>
     <summary>Provides a parser for Azure DevOps and Azure DevOps Server URLs.</summary>
     <description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</description>
-    <licenseUrl>https://github.com/bbtsoftware/TfsUrlParser/blob/develop/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/bbtsoftware/TfsUrlParser/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <repository type="git" url="https://github.com/cake-contrib/Cake.Issues"/>
+    <repository type="git" url="https://github.com/bbtsoftware/TfsUrlParser"/>
     <copyright>Copyright © BBT Software AG</copyright>
     <tags>AzureDevOps Git Parser</tags>
     <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.3.0</releaseNotes>
