@@ -51,5 +51,8 @@ jobs:
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1
 
+      - name: Package NuGet
+        run: nuget pack **\*.nuspec 
+
       - name: Publish NuGet
         run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETORG}}
