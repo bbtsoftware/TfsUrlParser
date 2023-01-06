@@ -3,19 +3,20 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>TfsUrlParser</id>
     <title>Azure DevOps URL Parser</title>
-    <version>1.4.0</version>
+    <version>1.4.1</version>
     <authors>BBT Software AG</authors>
     <owners>bbtsoftware, pascalberger</owners>
     <summary>Provides a parser for Azure DevOps and Azure DevOps Server URLs.</summary>
     <description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/bbtsoftware/TfsUrlParser/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
+    <iconUrl>
+      https://raw.githubusercontent.com/bbtsoftware/TfsUrlParser/fdaa354eef80c05070c93ef14b6774abe7eeac73/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <repository type="git" url="https://github.com/bbtsoftware/TfsUrlParser"/>
+    <repository type="git" url="https://github.com/bbtsoftware/TfsUrlParser" />
     <copyright>Copyright © BBT Software AG</copyright>
     <tags>AzureDevOps Git Parser</tags>
-    <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.4.0</releaseNotes>
+    <releaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.4.1</releaseNotes>
   </metadata>
   <files>
     <file src="..\..\src\TfsUrlParser\bin\Release\netstandard2.0\TfsUrlParser.dll" target="lib\netstandard2.0" />
