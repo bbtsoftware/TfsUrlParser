@@ -4,26 +4,33 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyTitle>TfsUrlParser</AssemblyTitle>
     <CodeAnalysisRuleSet>..\TfsUrlParser.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\$(Configuration)\TfsUrlParser.XML</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\TfsUrlParser.xml</DocumentationFile>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Title>TfsUrlParser</Title>
-    <Description>Azure DevOps URL Parser</Description>
+    <Title>Azure DevOps URL Parser</Title>
+    <Description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</Description>
     <Product>TfsUrlParser</Product>
     <Company>BBT Software AG</Company>
     <Authors>BBT Software AG</Authors>
     <Copyright>Copyright © BBT Software AG</Copyright>
+    <PackageId>TfsUrlParser</PackageId>
     <PackageTags>AzureDevOps Git Parser</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/bbtsoftware/TfsUrlParser/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bbtsoftware/TfsUrlParser.git</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.4.1</PackageReleaseNotes>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
