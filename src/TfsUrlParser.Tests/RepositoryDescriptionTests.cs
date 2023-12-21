@@ -8,9 +8,6 @@
     {
         [Theory]
         [InlineData(
-            @"http://myserver:8080/tfs/defaultcollection/myproject/",
-            "No valid Git repository URL.")]
-        [InlineData(
             @"http://myserver:8080/tfs/defaultcollection/myproject/_git",
             "No valid Git repository URL.")]
         [InlineData(
@@ -25,6 +22,7 @@
             var result = Record.Exception(() => new RepositoryDescription(new Uri(repoUrl)));
 
             // Then
+
             result.IsUriFormatExceptionException(expectedMessage);
         }
 
@@ -192,6 +190,117 @@
             repositoryDescription.ProjectName.ShouldBe(projectName);
             repositoryDescription.RepositoryName.ShouldBe(repositoryName);
             repositoryDescription.RepositoryUrl.ShouldBe(new Uri(repositoryUrl));
+            repositoryDescription.IsRepository.ShouldBe(true);
         }
+
+        [Theory]
+        [InlineData(
+           @"http://myserver:8080/tfs/defaultcollection/myproject/",
+           @"http://myserver:8080/",
+           "defaultcollection",
+           @"http://myserver:8080/tfs/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"http://tfs.myserver/defaultcollection/myproject/",
+           @"http://tfs.myserver/",
+           "defaultcollection",
+           @"http://tfs.myserver/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"http://mytenant.visualstudio.com/defaultcollection/myproject/",
+           @"http://mytenant.visualstudio.com/",
+           "defaultcollection",
+           @"http://mytenant.visualstudio.com/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"http://tfs.foo.com/foo/foo",
+           @"http://tfs.foo.com/",
+           "foo",
+           @"http://tfs.foo.com/foo",
+           "foo")]
+        [InlineData(
+           @"https://myserver:8080/tfs/defaultcollection/myproject/",
+           @"https://myserver:8080/",
+           "defaultcollection",
+           @"https://myserver:8080/tfs/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"https://tfs.myserver/defaultcollection/myproject/",
+           @"https://tfs.myserver/",
+           "defaultcollection",
+           @"https://tfs.myserver/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"https://mytenant.visualstudio.com/defaultcollection/myproject/",
+           @"https://mytenant.visualstudio.com/",
+           "defaultcollection",
+           @"https://mytenant.visualstudio.com/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"https://tfs.foo.com/foo/foo/",
+           @"https://tfs.foo.com/",
+           "foo",
+           @"https://tfs.foo.com/foo",
+           "foo")]
+        [InlineData(
+           @"ssh://myserver:8080/tfs/defaultcollection/myproject/",
+           @"ssh://myserver:8080/",
+           "defaultcollection",
+           @"https://myserver:8080/tfs/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"ssh://tfs.myserver/defaultcollection/myproject/",
+           @"ssh://tfs.myserver/",
+           "defaultcollection",
+           @"https://tfs.myserver/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"ssh://mytenant.visualstudio.com/defaultcollection/myproject/",
+           @"ssh://mytenant.visualstudio.com/",
+           "defaultcollection",
+           @"https://mytenant.visualstudio.com/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"ssh://tfs.foo.com/foo/foo/",
+           @"ssh://tfs.foo.com/",
+           "foo",
+           @"https://tfs.foo.com/foo",
+           "foo")]
+        [InlineData(
+           @"ssh://foo:bar@myserver:8080/tfs/defaultcollection/myproject/",
+           @"ssh://myserver:8080/",
+           "defaultcollection",
+           @"https://myserver:8080/tfs/defaultcollection",
+           "myproject")]
+        [InlineData(
+           @"https://myorganization@dev.azure.com/myorganization/myproject/",
+           @"https://myorganization@dev.azure.com/",
+           "myorganization",
+           @"https://myorganization@dev.azure.com/myorganization",
+           "myproject")]
+        [InlineData(
+           @"https://myorganization.visualstudio.com/myproject/",
+           @"https://myorganization.visualstudio.com/",
+           "DefaultCollection",
+           @"https://myorganization.visualstudio.com",
+           "myproject")]
+        public void Should_Parse_NonRepo_Url(
+           string repoUrl,
+           string serverUrl,
+           string collectionName,
+           string collectionurl,
+           string projectName)
+        {
+            // Given / When
+            var repositoryDescription = new RepositoryDescription(new Uri(repoUrl));
+
+            // Then
+            repositoryDescription.ServerUrl.ShouldBe(new Uri(serverUrl));
+            repositoryDescription.CollectionName.ShouldBe(collectionName);
+            repositoryDescription.CollectionUrl.ShouldBe(new Uri(collectionurl));
+            repositoryDescription.ProjectName.ShouldBe(projectName);
+            repositoryDescription.IsRepository.ShouldBe(false);
+        }
+
     }
 }
