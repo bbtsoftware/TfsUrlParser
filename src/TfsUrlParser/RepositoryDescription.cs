@@ -28,14 +28,13 @@
 
             var gitSeparator = new[] { "/_git/" };
             var splitPath = repoUrl.AbsolutePath.Split(gitSeparator, StringSplitOptions.None);
-            if (repoUrl.ToString().Contains("_git"))
+            if (repoUrl.ToString().Contains("/_git/"))
             {
                 this.IsRepository = true;
                 if (splitPath.Length < 2)
                 {
                     throw new UriFormatException("No valid Git repository URL.");
                 }
-
             } else
             {
                 this.IsRepository = false;
