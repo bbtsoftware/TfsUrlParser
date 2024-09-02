@@ -28,9 +28,16 @@
 
             var gitSeparator = new[] { "/_git/" };
             var splitPath = repoUrl.AbsolutePath.Split(gitSeparator, StringSplitOptions.None);
-            if (splitPath.Length < 2)
+            if (repoUrl.ToString().Contains("/_git/"))
             {
-                throw new UriFormatException("No valid Git repository URL.");
+                this.IsRepository = true;
+                if (splitPath.Length < 2)
+                {
+                    throw new UriFormatException("No valid Git repository URL.");
+                }
+            } else
+            {
+                this.IsRepository = false;
             }
 
             this.ServerUrl = new Uri(repoUrl.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped));
@@ -56,11 +63,13 @@
             {
                 throw new UriFormatException("No valid Git repository URL containing default collection and project name.");
             }
-
-            var splitLastPart = splitPath[1].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-
             this.ProjectName = splitFirstPart.Last();
-            this.RepositoryName = splitLastPart.First();
+
+            if (this.IsRepository)
+            {
+                var splitLastPart = splitPath[1].Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                this.RepositoryName = splitLastPart.First();
+            }
         }
 
         /// <summary>
@@ -93,6 +102,11 @@
         /// URLs using SSH scheme are converted to HTTPS.
         /// </summary>
         public Uri RepositoryUrl { get; private set; }
+
+        /// <summary>
+        /// Get a value that indicates if this is a Git Repo or another TFS URL.
+        /// </summary>
+        public bool IsRepository { get; private set; }
 
         /// <summary>
         /// Converts the repository URL to a supported scheme if possible.
