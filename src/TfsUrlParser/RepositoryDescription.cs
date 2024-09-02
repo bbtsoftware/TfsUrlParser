@@ -35,7 +35,8 @@
                 {
                     throw new UriFormatException("No valid Git repository URL.");
                 }
-            } else
+            }
+            else
             {
                 this.IsRepository = false;
             }

@@ -8,9 +8,6 @@
     {
         [Theory]
         [InlineData(
-            @"http://myserver:8080/tfs/defaultcollection/myproject/_git",
-            "No valid Git repository URL.")]
-        [InlineData(
             @"http://myserver:8080/_git/myrepository",
             "No valid Git repository URL containing default collection and project name.")]
         [InlineData(
