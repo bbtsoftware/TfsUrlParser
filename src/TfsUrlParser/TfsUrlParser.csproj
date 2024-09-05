@@ -24,7 +24,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bbtsoftware/TfsUrlParser.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.4.1</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.5.0</PackageReleaseNotes>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
