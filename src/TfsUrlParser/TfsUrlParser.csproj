@@ -1,20 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyTitle>TfsUrlParser</AssemblyTitle>
+    <CodeAnalysisRuleSet>..\TfsUrlParser.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\$(Configuration)\TfsUrlParser.xml</DocumentationFile>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyTitle>TfsUrlParser</AssemblyTitle>
-    <Company>BBT Software AG</Company>
+    <Title>Azure DevOps URL Parser</Title>
+    <Description>Provides a parser to get repository information from an Azure DevOps and Azure DevOps Server URLs.</Description>
     <Product>TfsUrlParser</Product>
-    <Description>Azure DevOps URL Parser URL Parser</Description>
+    <Company>BBT Software AG</Company>
+    <Authors>BBT Software AG</Authors>
     <Copyright>Copyright © BBT Software AG</Copyright>
-    <CodeAnalysisRuleSet>..\TfsUrlParser.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\$(Configuration)\TfsUrlParser.XML</DocumentationFile>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-    <DebugSymbols>true</DebugSymbols>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>TfsUrlParser</PackageId>
+    <PackageTags>AzureDevOps Git Parser</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/bbtsoftware/TfsUrlParser/</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/bbtsoftware/TfsUrlParser.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/bbtsoftware/TfsUrlParser/releases/tag/1.5.0</PackageReleaseNotes>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
