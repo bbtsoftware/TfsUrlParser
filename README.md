@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This repository has been archived and is no longer actively maintained.
+> No further updates or support are planned.
+
 # Azure DevOps URL parser
 
 [![NuGet](https://img.shields.io/nuget/v/TfsUrlParser.svg)](https://www.nuget.org/packages/TfsUrlParser)
